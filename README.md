@@ -1,0 +1,2 @@
+# gateway-Authority-control
+使用springcloud gateway集成jwt进行登录验证，并使用RBAC模型进行用户的权限控制
