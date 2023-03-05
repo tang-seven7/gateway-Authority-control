@@ -1,0 +1,16 @@
+server:
+  port: 50022
+
+spring:
+  application:
+    name: cloud-user-manage
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+  # 数据库配置
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://222.200.99.204:3307/db01?useUnicode=true&characterEncoding=utf-8&useSSL=false&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true
+    username: root
+    password: root

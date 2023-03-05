@@ -1,0 +1,35 @@
+server:
+  port: 9527
+spring:
+  application:
+    name: cloud-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+  # redis配置
+  redis:
+    database: 0
+    host: 222.200.99.204
+    #redis默认端口
+    port: 6379
+    password:
+    timeout: 5000ms
+  profiles:
+    include: routers    #使得 application-routers.yml配置文件生效
+
+auth:
+  jwt:
+    enabled: true   # 是否开启JWT登录认证功能
+    secret: passjava  # JWT 私钥，用于校验JWT令牌的合法性
+    expiration: 1800000 # JWT 令牌的有效期，用于校验JWT令牌的合法性，一个小时
+    header: Authorization # HTTP 请求的 Header 名称，该 Header作为参数传递 JWT 令牌
+    userParamName: userId  # 用户登录认证用户名参数名称
+    pwdParamName: password  # 用户登录认证密码参数名称
+    useDefaultController: true # 是否使用默认的JwtAuthController
+    skipValidUrl: /auth/login
+  ignore:
+    whites: # 自定义白名单
+      - /auth/login
+      - /auth/token/refresh
+      - /user/register

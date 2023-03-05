@@ -1,0 +1,23 @@
+ spring:
+  cloud:
+    gateway:
+      routes:
+        - id: route_auth # 认证微服务路由规则
+          uri: lb://cloud-auth-server # 负载均衡，将请求转发到注册中心注册的 auth 服务进行认证
+          predicates: # 断言
+            - Path=/api/auth/** # 如果前端请求路径包含 api/auth，则应用这条路由规则
+          filters: #过滤器
+            - RewritePath=/api/(?<segment>.*),/$\{segment} # 将跳转路径中包含的api替换成空
+        - id: route_user # 用户注册微服务路由规则
+          uri: lb://cloud-user-manage # 负载均衡，将请求转发到注册中心注册的 auth 服务进行认证
+          predicates: # 断言
+            - Path=/api/user/** # 如果前端请求路径包含 api/user，则应用这条路由规则
+          filters: #过滤器
+            - RewritePath=/api/(?<segment>.*),/$\{segment} # 将跳转路径中包含的api替换成空
+
+        - id: route_address # 认证微服务路由规则
+          uri: lb://cloud-address-manage # 负载均衡，将请求转发到注册中心注册的 address 服务进行认证
+          predicates: # 断言
+            - Path=/api/address/** # 如果前端请求路径包含 api/address，则应用这条路由规则
+          filters: #过滤器
+            - RewritePath=/api/(?<segment>.*),/$\{segment} # 将跳转路径中包含的api替换成空

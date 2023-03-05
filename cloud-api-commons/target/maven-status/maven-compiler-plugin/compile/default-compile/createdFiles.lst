@@ -1,0 +1,5 @@
+com\seven\springcloud\entities\UserAccount.class
+com\seven\springcloud\entities\Address.class
+com\seven\springcloud\entities\enums\ResponseCodeEnum.class
+com\seven\springcloud\entities\CommonResult.class
+com\seven\springcloud\entities\SocialUser.class

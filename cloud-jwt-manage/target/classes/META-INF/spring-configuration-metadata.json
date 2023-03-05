@@ -1,0 +1,58 @@
+{
+  "groups": [
+    {
+      "name": "auth.jwt",
+      "type": "com.seven.springcloud.config.AuthJwtProperties",
+      "sourceType": "com.seven.springcloud.config.AuthJwtProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "auth.jwt.enabled",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.seven.springcloud.config.AuthJwtProperties",
+      "defaultValue": true
+    },
+    {
+      "name": "auth.jwt.expiration",
+      "type": "java.lang.Long",
+      "sourceType": "com.seven.springcloud.config.AuthJwtProperties"
+    },
+    {
+      "name": "auth.jwt.header",
+      "type": "java.lang.String",
+      "sourceType": "com.seven.springcloud.config.AuthJwtProperties"
+    },
+    {
+      "name": "auth.jwt.pwd-param-name",
+      "type": "java.lang.String",
+      "description": "用户登录-密码参数名称",
+      "sourceType": "com.seven.springcloud.config.AuthJwtProperties",
+      "defaultValue": "password"
+    },
+    {
+      "name": "auth.jwt.secret",
+      "type": "java.lang.String",
+      "sourceType": "com.seven.springcloud.config.AuthJwtProperties"
+    },
+    {
+      "name": "auth.jwt.skip-valid-url",
+      "type": "java.lang.String",
+      "sourceType": "com.seven.springcloud.config.AuthJwtProperties"
+    },
+    {
+      "name": "auth.jwt.use-default-controller",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.seven.springcloud.config.AuthJwtProperties",
+      "defaultValue": false
+    },
+    {
+      "name": "auth.jwt.user-param-name",
+      "type": "java.lang.String",
+      "description": "用户登录-用户名参数名称",
+      "sourceType": "com.seven.springcloud.config.AuthJwtProperties",
+      "defaultValue": "userId"
+    }
+  ],
+  "hints": []
+}
